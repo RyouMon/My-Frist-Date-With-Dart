@@ -22,4 +22,7 @@ main() {
 
   print(student); // same sa calling student.toString()
   // prints Wen, Liang, also known as WenSan
+
+  print("This is a student: $student");
+  // prints This is a student: Wen, Liang, also known as WenSan
 }
