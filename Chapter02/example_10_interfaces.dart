@@ -11,7 +11,7 @@ class Student implements Person {
   String lastName;
   String nickName;
 
-  Student(this.firstName, this.lastName, this.nickName)
+  Student(this.firstName, this.lastName, this.nickName);
 
   @override
   String get fullName => "$firstName $lastName";
