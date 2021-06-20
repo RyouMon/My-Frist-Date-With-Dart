@@ -28,8 +28,8 @@ class FavorsPage extends StatelessWidget {
   final List<Favor>? completedFavorsFavors;
   final List<Favor>? refusedFavors;
 
-  FavorsPage(
-    Key key, {
+  FavorsPage({
+    required Key key,
     this.pendingAnswerFavors,
     this.acceptedFavors,
     this.completedFavorsFavors,
