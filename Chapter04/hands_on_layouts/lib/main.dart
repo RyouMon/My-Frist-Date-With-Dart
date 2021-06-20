@@ -25,14 +25,14 @@ class FavorsPage extends StatelessWidget {
   // using mock values from mock_favors file for now
   final List<Favor>? pendingAnswerFavors;
   final List<Favor>? acceptedFavors;
-  final List<Favor>? completedFavorsFavors;
+  final List<Favor>? completedFavors;
   final List<Favor>? refusedFavors;
 
   FavorsPage({
     required Key key,
     this.pendingAnswerFavors,
     this.acceptedFavors,
-    this.completedFavorsFavors,
+    this.completedFavors,
     this.refusedFavors,
   }) : super(key: key);
 
