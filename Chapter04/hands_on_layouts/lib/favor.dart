@@ -1,16 +1,16 @@
 import 'package:hands_on_layouts/friend.dart';
 
 class Favor {
-  final String? uuid;
-  final String? description;
+  final String uuid;
+  final String description;
   final DateTime? dueDate;
   final bool? accepted;
   final DateTime? completed;
   final Friend? friend;
 
   Favor({
-    this.uuid,
-    this.description,
+    required this.uuid,
+    required this.description,
     this.dueDate,
     this.accepted,
     this.completed,
