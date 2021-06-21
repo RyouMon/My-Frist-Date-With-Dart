@@ -3,18 +3,18 @@ import 'package:hands_on_layouts/friend.dart';
 class Favor {
   final String uuid;
   final String description;
+  final Friend friend;
   final DateTime? dueDate;
   final bool? accepted;
   final DateTime? completed;
-  final Friend? friend;
 
   Favor({
     required this.uuid,
     required this.description,
+    required this.friend,
     this.dueDate,
     this.accepted,
     this.completed,
-    this.friend,
   });
 
   /// returns true if the favor is active ( the user is doing it )
