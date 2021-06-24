@@ -130,7 +130,7 @@ class FavorsPage extends StatelessWidget {
         margin: EdgeInsets.only(top: 8.0),
         alignment: Alignment.centerRight,
         child: Chip(
-          label: Text("Completed at: ${format.format(favor.completed)}"),
+          label: Text("Completed at: ${format.format(favor.completed!)}"),
         ),
       );
     }
