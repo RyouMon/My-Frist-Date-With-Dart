@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hands_on_layouts/favor.dart';
+import 'package:hands_on_layouts/mock_values.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -24,17 +25,17 @@ class MyApp extends StatelessWidget {
 
 class FavorsPage extends StatelessWidget {
   // using mock values from mock_favors file for now
-  final List<Favor>? pendingAnswerFavors;
-  final List<Favor>? acceptedFavors;
-  final List<Favor>? completedFavors;
-  final List<Favor>? refusedFavors;
+  final List<Favor> pendingAnswerFavors;
+  final List<Favor> acceptedFavors;
+  final List<Favor> completedFavors;
+  final List<Favor> refusedFavors;
 
   FavorsPage({
-    required Key key,
-    this.pendingAnswerFavors,
-    this.acceptedFavors,
-    this.completedFavors,
-    this.refusedFavors,
+    Key? key,
+    required this.pendingAnswerFavors,
+    required this.acceptedFavors,
+    required this.completedFavors,
+    required this.refusedFavors,
   }) : super(key: key);
 
   @override
