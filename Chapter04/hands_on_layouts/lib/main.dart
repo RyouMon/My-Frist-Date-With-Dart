@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart';
 import 'package:hands_on_layouts/favor.dart';
+import 'package:hands_on_layouts/friend.dart';
 import 'package:hands_on_layouts/mock_values.dart';
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:intl/intl.dart';
 
 void main() {
@@ -157,5 +161,71 @@ class FavorsPage extends StatelessWidget {
     }
 
     return Container();
+  }
+}
+
+class RequestFavorPage extends StatelessWidget {
+  final List<Friend> friends;
+
+  RequestFavorPage({Key? key, required this.friends}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Requesting a favor"),
+          leading: CloseButton(),
+          actions: <Widget>[
+            TextButton(onPressed: () {}, child: Text("SAVE")),
+          ],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Text("Request a favor to: "),
+              DropdownButtonFormField(
+                items: friends
+                    .map((e) => DropdownMenuItem(child: Text(e.name)))
+                    .toList(),
+              ),
+              Container(
+                height: 16.0,
+              ),
+              Text("Favor description:"),
+              TextFormField(
+                maxLines: 5,
+                inputFormatters: [LengthLimitingTextInputFormatter(200)],
+              ),
+              Container(
+                height: 16.0,
+              ),
+              Text("Due Date:"),
+              DateTimeField(
+                format: DateFormat("EEEE, MMMM d, yyyy 'at' h:mma"),
+                onShowPicker: (context, currentValue) async {
+                  final date = await showDatePicker(
+                      context: context,
+                      firstDate: DateTime(1900),
+                      initialDate: currentValue ?? DateTime.now(),
+                      lastDate: DateTime(2100));
+                  if (date != null) {
+                    final time = await showTimePicker(
+                      context: context,
+                      initialTime: TimeOfDay.fromDateTime(
+                          currentValue ?? DateTime.now()),
+                    );
+                    return DateTimeField.combine(date, time);
+                  } else {
+                    return currentValue;
+                  }
+                },
+              )
+            ],
+          ),
+        ) // continues below,
+        );
   }
 }
