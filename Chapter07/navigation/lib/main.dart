@@ -4,6 +4,7 @@ import 'navigation_widgetsapp.dart';
 import 'navigation_widgetsapp_named_routes.dart';
 import 'navigation_widgetsapp_named_routes_arguments.dart';
 import 'navigation_widgetsapp_navigation_result.dart';
+import 'navigation_transition.dart';
 
 void main() {
   // example 0 - Navigator directly
@@ -19,5 +20,8 @@ void main() {
   // runApp(NavigatorNamedRoutesArgumentsApp());
 
   // example 4 - Retrieving result
-  runApp(NavigatorResultApp());
+  // runApp(NavigatorResultApp());
+
+  // example 5 - Transition
+  runApp(NavigatorTransitionApp());
 }
